@@ -20,7 +20,7 @@
   // let mailInp = document.getElementById("mailInp");
   // let passInp = document.getElementById("passInp");
   let signupBtn = document.getElementById("signupBtn");
-
-  signupBtn.addEventListener("click",  ()=> {
-    alert("welcome");
+  signupBtn.addEventListener("click", ()=>{
+    alert("Hello world")
   })
+
