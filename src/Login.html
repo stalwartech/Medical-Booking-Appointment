@@ -6,36 +6,36 @@
      <link href="./output.css" rel="stylesheet">
     <title>Document</title>
 </head>
-<body>
-    <div id="general" >
-        <div class="">
-            <img src="" alt="Logo">
-            <p>LOGIN</p>
+<body class="overflow-hidden bg-blue-900">
+    <div class="flex flex-col w-100 bg-white mx-auto my-[22vh] gap-8 p-5 rounded-2xl">
+        <div class="mx-auto">
+            <img src="../Images/Logo-removebg-preview.png" alt="Logo" class="h-15 pl-3.5">
+            <p class="font-bold text-blue-900 text-3xl">LOGIN</p>
         </div>
-
+ 
         <div class="flex flex-col">
             <label for="Email">Email</label>
-            <input type="email" placeholder="Abdulsalamakintaro@gmail.com">
+            <input type="email" placeholder="Abdulsalamakintaro@gmail.com" class="border-1 rounded-3xl border-blue-300 h-10">
         </div>
 
         <div class="flex flex-col">
             <label for="Email">Password</label>
-            <input type="password" placeholder="⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕">
+            <input type="password" placeholder="⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕" class="border-1 rounded-3xl border-blue-300 h-10">
+        </div>
+
+        <div class="flex justify-between">
+            <p><span><input type="checkbox" name="Remember" id=""></span> Remember Me</p>
+            <a href="www.google.com" class="text-blue-600"><u>Forgot Password?</u></a>
         </div>
 
         <div>
-            <input type="checkbox" name="Remember" id="">Remember Me
-            <a href="www.google.com" class="text-blue-600">Forgot Password?</a>
+            <button id="loginBtn" class="bg-blue-800 text-white w-[100%] rounded-2xl h-10 font-bold">Login</button>
         </div>
 
-        <div>
-            <button id="loginBtn" class="bg-blue-800 text-white">LOGIN</button>
+        <div class="flex justify-between">
+            <p>Dont't have an account?</p>
+            <p><a href="sign up.html" class="text-blue-600">Create an account?</a></p>
         </div>
-
-        <div>
-            <p>Dont't have an account? <span class="text-blue-600">Create an account</span></p>
-        </div>
-
 
     </div>
 </body>
