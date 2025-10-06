@@ -3,10 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link href="./output.css" rel="stylesheet">
+    <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <title>Document</title>
 </head>
 <body>
-    <h1 class="text-red-950 text-3xl text-center">HELLO WORLD</h1>
+
+<header class="flex ml-80 py-5 gap-5 bg-[#F7F7F7] pl-2 rounded-2xl">
+    <input type="text" class="border-gray-500  border-1 h-8 w-[70vw] rounded-[10px] bg-white placeholder:pl-5" placeholder="🔍 Search your history over here" >
+    <span class="material-symbols-outlined pt-1.5">notifications</span>      
+    <div class="flex gap-3">
+        <div>
+            <img src="../Images/Logo-removebg-preview.png" alt="Image" class="h-8">     
+        </div>
+        <div class="flex flex-col leading-3.5">
+            <p><b>Abdulsalam</b></p>
+            <p>Patient</p>
+        </div>
+    </div>
+</header>
+
+
+<aside class="w-2xs bg-[#F7F7F7] -mt-18 rounded-2xl h-[95vh] pl-5 ml-5 flex flex-col justify-between">
+    <div class="flex flex-col gap-15">
+        <div class="flex pt-5 pl-10 gap-3">
+            <img src="../Images/Logo-removebg-preview.png" alt="Logo" class="rounded-4xl h-8">
+            <p class="font-bold text-2xl text-gray-500">Yaa Salam</p>
+        </div>
+        <hr class="border-0.5 border-blue-900 w-full -my-7">
+
+        <div class="flex flex-col gap-10 pl-10">
+            <button class="flex items-center gap-2 font-bold  text-gray-500"> <span class="material-symbols-outlined">overview</span> Overview</button>
+            <button class="flex items-center gap-2 font-bold text-gray-500"><span class="material-symbols-outlined">calendar_month</span>Appointments</button>
+            <button class="flex items-center gap-2 font-bold text-gray-500"><span class="material-symbols-outlined">person</span>Doctors</button>
+            <button class="flex items-center gap-2 font-bold text-gray-500"><span class="material-symbols-outlined">history</span>Histtory</button>
+            <button class="flex items-center gap-2 font-bold text-gray-500"><span class="material-symbols-outlined">settings</span>Settings</button>
+            <button class="flex items-center gap-2 font-bold text-gray-500"><span class="material-symbols-outlined">logout</span>Logout</button>
+        </div>
+    </div>
+
+    <div class="flex gap-2.5">
+        <div class="p-2 bg-blue-800">
+            <i class="text-white"><span class="material-symbols-outlined">e911_avatar</span></i>
+        </div>
+        <div>
+            <p class="text-red-600 font-bold">Emergency Hotline</p>
+            <p> +234 903 054 5379</p>
+        </div>
+
+    </div>
+</aside>
 </body>
 </html>
