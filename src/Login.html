@@ -8,19 +8,21 @@
 </head>
 <body class="overflow-hidden bg-blue-900">
     <div class="flex flex-col w-100 bg-white mx-auto my-[19vh] gap-8 p-5 rounded-2xl">
+
         <div class="mx-auto">
             <img src="../Images/Logo-removebg-preview.png" alt="Logo" class="h-15 pl-3.5">
             <p class="font-bold text-blue-900 text-3xl">LOGIN</p>
         </div>
- 
+        
+    <form action="" class="flex flex-col gap-8">
         <div class="flex flex-col">
             <label for="Email">Email</label>
-            <input type="email" placeholder="Abdulsalamakintaro@gmail.com" class="border-1 rounded-3xl border-blue-300 h-10 pl-5">
+            <input id="mailInp" type="email" placeholder="Abdulsalamakintaro@gmail.com" class="border-1 rounded-3xl border-blue-300 h-10 pl-5" required>
         </div>
 
         <div class="flex flex-col">
             <label for="Email">Password</label>
-            <input type="password" placeholder="⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕" class="pl-5 border-1 rounded-3xl border-blue-300 h-10">
+            <input id="passInp" type="password" placeholder="⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕" class="pl-5 border-1 rounded-3xl border-blue-300 h-10" required>
         </div>
 
         <div class="flex justify-between">
@@ -29,14 +31,15 @@
         </div>
 
         <div>
-            <button id="loginBtn" class="bg-blue-800 text-white w-[100%] rounded-2xl h-10 font-bold">Login</button>
+            <button type="submit" id="loginBtn" class="bg-blue-800 text-white w-[100%] rounded-2xl h-10 font-bold">Login</button>
         </div>
-
+    </form>
         <div class="flex justify-between">
             <p>Dont't have an account?</p>
             <p><a href="signup.html" class="text-blue-600">Create an account?</a></p>
         </div>
-
+        
     </div>
 </body>
+<script src="../script/Login.js" type="module"></script>
 </html>
