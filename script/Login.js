@@ -1,11 +1,8 @@
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
-  import {getAuth, createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+import {initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+import {getAuth, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
 
   // Your web app's Firebase configuration
-  const firebaseConfig = {
+ const firebaseConfig = {
     apiKey: "AIzaSyAEWuDKVz2FGRRggvHE_FoAcTBCBxMwiyE",
     authDomain: "medical-appointment-98ddc.firebaseapp.com",
     projectId: "medical-appointment-98ddc",
@@ -15,18 +12,44 @@
   };
 
 
-// Calling all the html tags 
-let mailInp = document.getElementById("mailInp")
-let passInp = document.getElementById("passInp")
-let loginBtn = document.getElementById("loginBtn")
-
+// Importing all the HTMl tags for usage 
+let mailInp = document.getElementById("mailInp");
+let passInp = document.getElementById("passInp");
+let loginBtn = document.getElementById("loginBtn");
+let notifyPara = document.getElementById("notify");
+let myform = document.getElementById("myform");
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app)
+const auth = getAuth(app);
 
-//   lakslns
+//Login Event
+let loginUser = async () => {
+    if(!mailInp.value){
+        notifyPara.innerHTML = "Enter a correct mail";
+        return
+    }
+    if(!passInp.value){
+        notifyPara.innerHTML = "Enter password";
+        return
+    }
+    try {
+        const userDetails = await signInWithEmailAndPassword(auth, mailInp.value, passInp.value);
+        const userUid = userDetails.user;
+        loginBtn.disabled = true
+        // console.log("Sign Up completed");
+        console.log(userUid);    
+        window.location.href = "../src/Overview.html"    
+    } catch (error) {
+        console.log(error.code);
+    }
+}
 
-loginBtn.addEventListener("click", ()=>{
-    createUserWithEmailAndPassword(auth, mailInp.value, passInp.value)
-}) 
+// Adding event listener to the login button
+loginBtn.addEventListener("click", () => {
+    loginUser()
+})
+
+myform.addEventListener("click", (e) => {
+    e.preventDefault();
+})

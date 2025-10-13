@@ -18,6 +18,5 @@
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app)
 
-//   lakslns
-
-createUserWithEmailAndPassword(auth, "abdulsalamakiqwe@gmail", "jhjwek")
+  // Get values for all data in the html
+  
