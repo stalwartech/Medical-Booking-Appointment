@@ -17,7 +17,7 @@
             <img src="../Images/Logo-removebg-preview.png" alt="Image" class="h-8">     
         </div>
         <div class="flex flex-col leading-3.5">
-            <p><b>Abdulsalam</b></p>
+            <p id="username"><b>Abdulsalam</b></p>
             <p>Patient</p>
         </div>
     </div>
@@ -38,7 +38,7 @@
             <button class="flex items-center gap-2 font-bold text-gray-500"><span class="material-symbols-outlined">person</span>Doctors</button>
             <button class="flex items-center gap-2 font-bold text-gray-500"><span class="material-symbols-outlined">history</span>Histtory</button>
             <button class="flex items-center gap-2 font-bold text-gray-500"><span class="material-symbols-outlined">settings</span>Settings</button>
-            <button class="flex items-center gap-2 font-bold text-gray-500"><span class="material-symbols-outlined">logout</span>Logout</button>
+            <button class="flex items-center gap-2 font-bold text-gray-500" id="signOut"><span class="material-symbols-outlined">logout</span>Logout</button>
         </div>
     </div>
 
@@ -55,7 +55,19 @@
 </aside>
 
 <main class="ml-60 -mt-145 bg-amber-800 h-[87vh] mr-2 px-5 pt-3">
-    <h1>Hwllo</h1>
+    <p>Welcome, <span id="fName">fName</span> <span id="lName">lName</span></p>
+    <div class="flex">
+        <div>
+            
+            Active Prescription
+        </div>
+        <div>Upcoming Appointments</div>
+        <div>Total History Entries</div>
+        <div>Total Appointments</div>
+        <div>Assigned Doctors</div>
+        <div>Plan Summary</div>
+    </div>
 </main>
 </body>
+<script src="../script/Overvieew.js" type="module"></script>
 </html>

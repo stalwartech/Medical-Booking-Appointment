@@ -1,5 +1,5 @@
 import {initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
-import {getAuth, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
+import {getAuth, signInWithEmailAndPassword, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
 
   // Your web app's Firebase configuration
  const firebaseConfig = {
@@ -38,10 +38,21 @@ let loginUser = async () => {
         const userUid = userDetails.user;
         loginBtn.disabled = true
         // console.log("Sign Up completed");
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                const uid = user.uid;
+                console.log("This is a user", uid);
+            } else {
+                console.log("User is signed out");
+                
+            }
+        })
+
         console.log(userUid);    
         window.location.href = "../src/Overview.html"    
     } catch (error) {
         console.log(error.code);
+        // auth/network-request-failed
     }
 }
 

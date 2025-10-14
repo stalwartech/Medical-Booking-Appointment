@@ -1,6 +1,7 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
-  import {getAuth, createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
+  import {getAuth, onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
+  import {getFirestore, doc, collection, getDoc, getDocs, setDoc, deleteDoc} from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -16,7 +17,53 @@
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app)
+  const auth = getAuth(app);
+  const DB = getFirestore(app)
 
-  // Get values for all data in the html
-  
+
+try {
+  onAuthStateChanged(auth, async (user) => {
+  if(user){
+    const uid = await user.uid;
+    console.log(`You are logged in {uid}`, uid);
+    //All lthe html query data
+    let username = document.getElementById("username");
+    username.innerText = uid;
+
+    // let fName = document.getElementById("fName")
+    // let fName = document.getElementById()
+    // let fName = document.getElementById()
+    // let fName = document.getElementById()
+    // let fName = document.getElementById()
+    // let fName = document.getElementById()
+    // let fName = document.getElementById()
+    // let fName = document.getElementById()
+    // let fName = document.getElementById()
+    // let fName = document.getElementById()
+    // let fName = document.getElementById()
+    // let fName = document.getElementById()
+  }
+  else{
+    console.log("User does not exist");
+  }})
+} catch (error) {
+  console.log(error.code);  
+}
+finally{
+  // Signout from the web
+    const logOut = document.getElementById("signOut");
+    logOut.addEventListener("click", async () => {
+      signOut(auth);
+      window.location.href = "../src/Login.html"
+    })
+}
+
+
+
+
+// Getting queries for all the html data 
+
+
+
+
+
