@@ -16,7 +16,6 @@
 
 
 // Calling all the html tags 
-let nameInp = document.getElementById("nameInp");
 let mailInp = document.getElementById("mailInp");
 let passInp = document.getElementById("passInp");
 let signupBtn = document.getElementById("signupBtn");
@@ -28,10 +27,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 let createUser = async () => {
-    if(!nameInp.value){
-        notifyPara.innerHTML = "Enter a correct name";
-        return
-    }
     if(!mailInp.value){
         notifyPara.innerHTML = "Enter a correct mail";
         return
@@ -44,15 +39,13 @@ let createUser = async () => {
     try {
         const userDetails =  await createUserWithEmailAndPassword(auth, mailInp.value, passInp.value);  
         const userUid = userDetails.user;
+        signupBtn.disabled = true;
         console.log(userUid);
+        window.location.href = "../src/Redirect1.html"
         
     } 
     catch (error) {
         console.log(error);
-    }
-    finally{
-      console.log("Done!!!");
-      window.location.href = "../src/Login.html"
     }
 }
 

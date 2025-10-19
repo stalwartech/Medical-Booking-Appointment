@@ -20,42 +20,79 @@
   const auth = getAuth(app);
   const DB = getFirestore(app)
 
+  // All document quesries 
+  let fName = document.getElementById("fName")
+  let username = document.getElementById("Username");
+  let age = document.getElementById("age");
+  let gene = document.getElementById("gene");
+  let NHISID = document.getElementById("NHISID");
+  let gender = document.getElementById("gender");
+  let bGroup = document.getElementById("bGroup")
+  let Weight = document.getElementById("Weight")
+  let Height = document.getElementById("Height")
+  let BMI = document.getElementById("BMI")
+  
+  // Getting all element for side menus
+  const logOut = document.getElementById("signOut");
+  const Overview = document.getElementById("Overview");
+  const Appointments = document.getElementById("Appointments")
+  const Doctors = document.getElementById("Doctors")
+  const History = document.getElementById("History")
+  const Settings = document.getElementById("Settings")
+
+
 
 try {
   onAuthStateChanged(auth, async (user) => {
   if(user){
-    const uid = await user.uid;
-    console.log(`You are logged in {uid}`, uid);
-    //All lthe html query data
-    let username = document.getElementById("username");
-    username.innerText = uid;
-
-    // let fName = document.getElementById("fName")
-    // let fName = document.getElementById()
-    // let fName = document.getElementById()
-    // let fName = document.getElementById()
-    // let fName = document.getElementById()
-    // let fName = document.getElementById()
-    // let fName = document.getElementById()
-    // let fName = document.getElementById()
-    // let fName = document.getElementById()
-    // let fName = document.getElementById()
-    // let fName = document.getElementById()
-    // let fName = document.getElementById()
+    const uid = user.uid;
+    const userColRef =  collection(DB, "users")
+    const userDoc = doc(userColRef, uid);
+    const docSnap = await getDoc(userDoc)
+    const userData = docSnap.data()
+    console.log(docSnap.data());
+    username.innerHTML = `<b>${userData.firstName}</b>`;
+    fName.innerHTML = `<b>${userData.firstName}</b>`
+    age.textContent = (new Date().getFullYear())-(userData.DOB.slice(0,4));
+    gene.textContent = userData.Genetic;
+    NHISID.textContent = userData.NHISID;
+    gender.textContent = userData.gender;
+    bGroup.textContent = userData.bloodGroup;
+    Weight.textContent = userData.Weight;
+    Height.textContent = userData.Height;
+    BMI.textContent = (userData.Weight/(userData.Height *userData.Height)).toFixed(2)   
   }
-  else{
-    console.log("User does not exist");
-  }})
-} catch (error) {
-  console.log(error.code);  
-}
+ })
+} 
+catch (error) {
+  console.log(error.code);}
+
 finally{
-  // Signout from the web
-    const logOut = document.getElementById("signOut");
+    // Signout from the web
     logOut.addEventListener("click", async () => {
       signOut(auth);
       window.location.href = "../src/Login.html"
     })
+
+    // Other side Menu buttons
+    Overview.addEventListener("click", () => {
+      window.location.href = "#"
+    })
+
+    Appointments.addEventListener("click", () => {
+      window.location.href = "../src/Appointments.html"
+    })
+    Doctors.addEventListener("click", () => {
+      window.location.href = "../src/Doctors.html"
+    })
+    History.addEventListener("click", () => {
+      window.location.href = "../src/History.html"
+    })
+    Settings.addEventListener("click", () => {
+      window.location.href = "../src/Settings.html"
+    })
+
+
 }
 
 
