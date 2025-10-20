@@ -3,11 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link href="./output.css" rel="stylesheet">
-    <title>Document</title>
+    <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <title>Dashboard</title>
 </head>
-<body class="overflow-hidden">
-    
+<body>
+
+<header class="flex ml-60 py-5 gap-5 bg-[#F7F7F7] rounded-2xl mr-2 px-5">
+    <input type="text" class="border-gray-500  border-1 h-8 w-[70vw] rounded-[10px] bg-white placeholder:pl-5" placeholder="🔍 Search your history over here" >
+<div class="relative inline-block">
+  <span class="material-symbols-outlined text-4xl text-gray-700">    notifications_unread</span>
+  <span class="absolute top-0 right-0 block h-2 w-2 rounded-full bg-red-600 ring-2 ring-white"></span>
+</div>
+    <div class="flex gap-3">
+        <div>
+            <img src="../Images/Logo-removebg-preview.png" alt="Image" class="h-8">     
+        </div>
+        <div class="flex flex-col leading-3.5">
+            <p id="fName"><b>Loading</b></p>
+            <p id="role">Patient</p>
+        </div>
+    </div>
+</header>
+
+
+<aside class="w-55 bg-[#F7F7F7] -mt-18 rounded-2 h-[100vh] px-3 mx-2 flex flex-col justify-between">
+    <div class="flex flex-col gap-15">
+        <div class="flex pt-5 pl-8 gap-3">
+            <img src="../Images/Logo-removebg-preview.png" alt="Logo" class="rounded-4xl h-8">
+            <p class="font-bold text-2xl text-gray-500">Yaa Salam</p>
+        </div>
+        <hr class="border-0.5 border-blue-900 w-full -my-7">
+
+        <div class="flex flex-col gap-10 pl-10">
+            <button id="Overview" class="flex items-center gap-2 font-bold  text-gray-500 hover:bg-blue-900 hover:p-3 hover:rounded-2xl hover:text-white active:bg-blue-900 active:p-3 active:rounded-2xl active:text-white"> <span class="material-symbols-outlined">overview</span> Overview</button>
+            <button id="Appointments" class="flex items-center gap-2 font-bold text-gray-500 hover:bg-blue-900 hover:p-3 hover:rounded-2xl hover:text-white"><span class="material-symbols-outlined">calendar_month</span>Appointments</button>
+            <button id="Doctors" class="flex items-center gap-2 font-bold text-gray-500 hover:bg-blue-900 hover:p-3 hover:rounded-2xl hover:text-white"><span class="material-symbols-outlined">person</span> <span id="role">Doctors</span></button>
+            <button id="History" class="flex items-center gap-2 font-bold text-gray-500 hover:bg-blue-900 hover:p-3 hover:rounded-2xl hover:text-white"><span class="material-symbols-outlined">history</span>Histtory</button>
+            <button id="Settings" class="flex items-center gap-2 font-bold text-gray-500 hover:bg-blue-900 hover:p-3 hover:rounded-2xl hover:text-white"><span class="material-symbols-outlined">settings</span>Settings</button>
+            <button class="flex items-center gap-2 font-bold text-gray-500 hover:bg-blue-900 hover:p-3 hover:rounded-2xl hover:text-white" id="signOut"><span class="material-symbols-outlined">logout</span>Logout</button>
+        </div>
+    </div>
+
+    <div class="flex gap-2.5 pb-5">
+        <div class="p-2 pb-1.5 bg-blue-800">
+            <i class="text-white"><span class="material-symbols-outlined">e911_avatar</span></i>
+        </div>
+        <div>
+            <p class="text-red-600 font-bold ">Emergency Hotline</p>
+            <p> +234 903 054 5379</p>
+        </div>
+
+    </div>
+</aside>
+
+<main class="ml-60 -mt-145 bg-white h-[87vh] mr-2 px-5 pt-3">
     <div class="flex flex-col w-100 bg-white mx-auto gap-8 p-5 rounded-2xl">
         <div class="mx-auto">
         
@@ -44,5 +94,8 @@
         </div>
 
     </div>
+</main>
 </body>
+<script src="../script/Appointments.js" type="module"></script>
 </html>
+    

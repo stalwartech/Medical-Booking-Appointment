@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Registration Form</title>
+     <link href="./output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <div class="bg-white shadow-lg rounded-xl p-8 w-full max-w-3xl">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Doctor Registration Form</h2>
+
+    <form id="doctorForm" class="space-y-6">
+
+      <!-- Name and Email -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Full Name *</label>
+          <input id="drName" type="text" placeholder="Dr. John Adewale" class="mt-1 w-full p-2 border rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"/>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Email Address *</label>
+          <input id="drMail" type="email" placeholder="example@gmail.com" class="mt-1 p-2 border w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"/>
+        </div>
+      </div>
+
+      <!-- Phone and Gender -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Phone Number *</label>
+          <input id="drNumber" type="tel" placeholder="+234 000 000 0000" class="p-2 border mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"/>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Gender *</label>
+          <select id="gender" class="mt-1 w-full p-2 border rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+            <option>Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option>Others</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Specialization and License -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Specialization *</label>
+          <input id="specialty" type="text" placeholder="Cardiology, Pediatrics, etc." class="p-2 border mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"/>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">License / MDCN ID *</label>
+          <input id="LicID" type="text" placeholder="MDCN-01234" class="p-2 border mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"/>
+        </div>
+      </div>
+
+      <!-- Experience and Fee -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Years of Experience *</label>
+          <input id="Experience" type="number" placeholder="10" class="p-2 border mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"/>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Consultation Fee (₦) *</label>
+          <input id="Fee" type="number" placeholder="10000" class="p-2 border mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"/>
+        </div>
+      </div>
+
+      <!-- Hospital and Address -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Hospital / Clinic Name *</label>
+        <input id="hospitalName" type="text" placeholder="Lagos General Hospital" class="p-2 border mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"/>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Clinic Address *</label>
+        <input id="hospitalAdd" type="text" placeholder="Ikeja, Lagos" class="p-2 border mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"/>
+      </div>
+
+      <!-- Bio -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Short Bio *</label>
+        <textarea id="drBio" rows="3" placeholder="Write a short introduction about your practice..." class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"></textarea>
+      </div>
+
+      <!-- Submit -->
+      <div class="pt-4">
+        <button id="regBtn" type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Complete Registration</button>
+      </div>
+    </form>
+  </div>
+
+</body>
+<script src="../script/DoctorForm.js" type="module"></script>
+</html>

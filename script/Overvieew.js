@@ -31,6 +31,9 @@
   let Weight = document.getElementById("Weight")
   let Height = document.getElementById("Height")
   let BMI = document.getElementById("BMI")
+  let role = document.getElementById("role")
+  let patientProfile = document.getElementById("patientProfile");
+  let drProfile = document.getElementById("drProfile");
   
   // Getting all element for side menus
   const logOut = document.getElementById("signOut");
@@ -50,17 +53,39 @@ try {
     const userDoc = doc(userColRef, uid);
     const docSnap = await getDoc(userDoc)
     const userData = docSnap.data()
-    console.log(docSnap.data());
-    username.innerHTML = `<b>${userData.firstName}</b>`;
-    fName.innerHTML = `<b>${userData.firstName}</b>`
-    age.textContent = (new Date().getFullYear())-(userData.DOB.slice(0,4));
-    gene.textContent = userData.Genetic;
-    NHISID.textContent = userData.NHISID;
-    gender.textContent = userData.gender;
-    bGroup.textContent = userData.bloodGroup;
-    Weight.textContent = userData.Weight;
-    Height.textContent = userData.Height;
-    BMI.textContent = (userData.Weight/(userData.Height *userData.Height)).toFixed(2)   
+    console.log(docSnap.data().role); // What is the role
+
+    if (docSnap.data().role == "Patient") { 
+      drProfile.style.display = "none"
+      username.innerHTML = `<b>${userData.firstName}</b>`;
+      fName.innerHTML = `<b>${userData.firstName}</b>`
+      age.textContent = (new Date().getFullYear())-(userData.DOB.slice(0,4));
+      gene.textContent = userData.Genetic;
+      NHISID.textContent = userData.NHISID;
+      gender.textContent = userData.gender;
+      bGroup.textContent = userData.bloodGroup;
+      Weight.textContent = userData.Weight;
+      Height.textContent = userData.Height;
+      role.textContent = userData.role;
+      BMI.textContent = (userData.Weight/(userData.Height *userData.Height)).toFixed(2)   
+      return
+    }
+    if (docSnap.data().role == "Doctor") { 
+      patientProfile.style.display = "none"
+      username.innerHTML = `<b>${userData.firstName}</b>`;
+      fName.innerHTML = `<b>${userData.firstName}</b>`;
+      age.textContent = (new Date().getFullYear())-(userData.DOB.slice(0,4));
+      gene.textContent = userData.Genetic;
+      NHISID.textContent = userData.NHISID;
+      gender.textContent = userData.gender;
+      bGroup.textContent = userData.bloodGroup;
+      Weight.textContent = userData.Weight;
+      Height.textContent = userData.Height;
+      BMI.textContent = (userData.Weight/(userData.Height * userData.Height)).toFixed(2)   
+      return
+    }
+
+
   }
  })
 } 

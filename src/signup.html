@@ -23,7 +23,15 @@
             <input type="password" id="passInp" placeholder="⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕⁕" class="border-1 rounded-3xl border-blue-300 h-10 pl-5">
         </div>
 
-        <p id="notify" class="text-center text-red-700 -mt-5"></p>
+        <div class="flex flex-col">
+            <select id="Occupation" class="border-1 rounded-3xl border-blue-300 h-10 pl-5">
+                <option value="Default">Sign Up As ...</option>
+                <option value="Patient">Patient</option>
+                <option value="Doctor">Doctor</option>
+            </select>
+        </div>
+
+        <p id="notify" class="leading-0 -my-3 text-red-700 text-center"></p>
 
         <div class="flex justify-between">
             <p><span><input type="checkbox" name="Remember" id=""></span> I accept <span class="text-blue-900 font-medium underline cursor-pointer">terms and condition</span></p>    

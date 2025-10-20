@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <title>Dashboard</title>
 </head>
-<body
->
+<body>
 
 <header class="flex ml-60 py-5 gap-5 bg-[#F7F7F7] rounded-2xl mr-2 px-5">
     <input type="text" class="border-gray-500  border-1 h-8 w-[70vw] rounded-[10px] bg-white placeholder:pl-5" placeholder="🔍 Search your history over here" >
@@ -103,8 +102,8 @@
 <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5">
     
     
-<!-- CUrrent Vitals  -->
-  <div class="bg-[#F7F7F7] rounded-xl shadow-md w-[350px] p-5">
+<!-- Patient Personal Details  -->
+  <div id="patientProfile" class="bg-[#F7F7F7] rounded-xl shadow-md w-[350px] p-5">
     <!-- Header -->
     <div class="flex justify-between items-center border-b pb-3 mb-4">
       <h2 class="text-lg font-semibold text-gray-800">Personal Details</h2>
@@ -117,10 +116,9 @@
       </div>
     </div>
 
-    <!-- Patient Info -->
     <div class="flex justify-between text-sm text-gray-700 mb-4">
       <!-- <p><span class="font-semibold">Patient Name:</span> Stalwart</p> -->
-      <p><span class="font-semibold">NHIS ID:</span> <span id="NHISID"> Loading...</span></p>
+      <p><span class="font-semibold">NHIS ID:</span> <span id="NHISID"> Loading</span></p>
       <p><span class="font-semibold">SEX:</span><span id="gender"> Loading</span></p>
     </div>
 
@@ -149,9 +147,83 @@
       <div>
         <p class="text-gray-400 text-sm">Height</p>
         <p id="Height" class="text-2xl font-semibold text-gray-800">Loading</p>
+        <p class="text-gray-500 text-xs">meter</p>
+
       </div>
       <div>
         <p class="text-gray-400 text-sm">BMI</p>
+        <p id="BMI" class="text-2xl font-semibold text-gray-800">Loading</p>
+      </div>
+    </div>
+
+    <!-- Blood Pressure -->
+    <div class="border-t pt-3">
+      <p class="text-red-500 text-sm font-semibold mb-2">Blood Pressure</p>
+      <div class="flex justify-between text-center">
+        <div>
+          <p class="text-3xl font-bold text-gray-800">150</p>
+          <p class="text-gray-500 text-sm">Systolic mmHg</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-800">90</p>
+          <p class="text-gray-500 text-sm">Diastolic mmHg</p>
+        </div>
+      </div>
+      <p id="regDate" class="text-xs text-gray-400 mt-3 text-center">
+       Loading
+      </p>
+    </div>
+  </div>
+
+
+<!-- Doctors profile -->
+  <div id="drProfile" class="bg-[#F7F7F7] rounded-xl shadow-md w-[350px] p-5">
+    <!-- Header -->
+    <div class="flex justify-between items-center border-b pb-3 mb-4">
+      <h2 class="text-lg font-semibold text-gray-800">Personal Details</h2>
+      <div class="w-5 h-5 bg-gray-100 rounded-full flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-gray-400">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M11.25 9.75h.008v.008H11.25V9.75zM11.25 12h.008v.008H11.25V12zM11.25 14.25h.008v.008H11.25v-.008z" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- DR Info -->
+    <div class="flex justify-between text-sm text-gray-700 mb-4">
+      <!-- <p><span class="font-semibold">Patient Name:</span> Stalwart</p> -->
+      <p><span class="font-semibold">License ID:</span> <span id="LicID"> Loading...</span></p>
+      <p><span class="font-semibold">SEX:</span><span id="gender"> Loading</span></p>
+    </div>
+
+    <!-- Vitals -->
+    <div class="grid grid-cols-3 gap-4 text-center mb-4">
+      <div>
+        <p class="text-gray-400 text-sm">Experience</p>
+        <p id="age" class="text-2xl font-semibold text-gray-800">Loading</p>
+        <p class="text-gray-500 text-xs">Years</p>
+      </div>
+      <div>
+        <p class="text-gray-400 text-sm">Specialty</p>
+        <p id="gene" class="text-2xl font-semibold text-gray-800">Loading</p>
+      </div>
+      <div>
+        <p class="text-gray-400 text-sm">Consult Fee</p>
+        <p id="bGroup" class="text-2xl font-semibold text-gray-800">Loading</p>
+      </div>
+    </div>
+    <div class="grid grid-cols-3 gap-4 text-center mb-4">
+      <div>
+        <p class="text-gray-400 text-sm">Hospital Name</p>
+        <p id="Weight" class="text-2xl font-semibold text-gray-800">Loading</p>
+      </div>
+      <div>
+        <p class="text-gray-400 text-sm">Address</p>
+        <p id="Height" class="text-2xl font-semibold text-gray-800">Loading</p>
+      </div>
+      <div>
+        <p class="text-gray-400 text-sm">Languages</p>
         <p id="BMI" class="text-2xl font-semibold text-gray-800">Loading</p>
       </div>
     </div>
@@ -323,8 +395,6 @@
       </div>
             
   </div>
-
-
 </main>
 </body>
 <script src="../script/Overvieew.js" type="module"></script>
