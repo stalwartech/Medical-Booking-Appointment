@@ -57,9 +57,106 @@
     </div>
 </aside>
 
-<main class="ml-60 -mt-145 bg-white h-[87vh] mr-2 px-5 pt-3">
-    
+<main id="Doctor" class="ml-60 -mt-145 bg-white h-[87vh] mr-2 px-5 pt-3 flex-1 hidden">
+      <div class="bg-white shadow-md rounded-2xl overflow-hidden">
+        <table class="min-w-full border-collapse">
+          <thead class="bg-blue-600 text-white text-left text-lg uppercase">
+            <tr>
+              <th class="px-6 py-3">Patient</th>
+              <th class="px-6 py-3">Date</th>
+              <th class="px-6 py-3">From</th>
+              <th class="px-6 py-3">To</th>
+              <th class="px-6 py-3">Reason</th>
+              <th class="px-6 py-3 text-center">Status</th>
+              <th class="px-6 py-3 text-center">Action</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-700 divide-y divide-gray-200">
+
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4 flex items-center gap-3">
+                <img src="https://i.pravatar.cc/40?img=8" class="w-10 h-10 rounded-full" alt="">
+                <div>
+                  <p class="font-semibold">Jane Smith</p>
+                  <p class="text-sm text-gray-500">janesmith@email.com</p>
+                </div>
+              </td>
+              <td class="px-2 py-4">22/10/2025</td>
+              <td class="px-4 w-35">10:30 AM</td>
+              <td class="px-4 w-35">05:30 PM</td>
+              <td class="px-2 py-4">General Checkup</td>
+              <td class="px-6 py-4 text-center">
+                <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">Pending</span>
+              </td>
+              <td class="px-6 py-4 text-center space-x-2">
+                <button class="bg-green-500 hover:bg-green-600 text-white px-3 py-1.5 rounded-lg text-sm font-medium"><span class="material-symbols-outlined">check_circle</span></button>
+                <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1.5 rounded-lg text-sm font-medium"><span class="material-symbols-outlined">cancel</span></button>
+              </td>
+            </tr>
+         
+          </tbody>
+        </table>
+      </div>
 </main>
+
+ 
+
+<!-- <main id="Patient" class="ml-60 -mt-145 bg-white h-[87vh] mr-2 px-5 pt-3 flex-1 hidden"> -->
+<main id="Patient" class="bg-white px-5 pt-3 shadow-md rounded-xl p-8 w-full max-w-lg mx-auto -mt-145 hidden">
+  <h2 class="text-2xl font-semibold text-gray-800 mb-2">Patient Details</h2>
+  <p class="text-gray-500 mb-6 text-sm">
+    Please fill in the form below to schedule your appointment.
+  </p>
+
+  <form class="space-y-5">
+    <!-- Name -->
+    <div>
+      <label class="block text-gray-700 font-medium mb-1">Name</label>
+      <input type="text" placeholder="Full Name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" required>
+    </div>
+
+    <!-- Email -->
+    <div>
+      <label class="block text-gray-700 font-medium mb-1">Email</label>
+      <input type="email" placeholder="person@example.com" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" required>
+    </div>
+
+    <!-- Date -->
+    <div>
+      <label class="block text-gray-700 font-medium mb-1">Date</label>
+      <input type="date" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" required>
+    </div>
+
+    <!-- Time From & To -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <label class="block text-gray-700 font-medium mb-1">From</label>
+        <input type="time" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" required>
+      </div>
+      <div>
+        <label class="block text-gray-700 font-medium mb-1">To</label>
+        <input type="time" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" required>
+      </div>
+    </div>
+
+    <!-- Checkup Note / Reason -->
+    <div>
+      <label class="block text-gray-700 font-medium mb-1">Checkup Note / Reason</label>
+      <textarea placeholder="Describe the reason for your visit..." rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" required></textarea>
+    </div>
+
+    <!-- Button -->
+    <div class="pt-2">
+      <button type="submit" class="w-full bg-blue-600 text-white font-medium py-2 rounded-lg hover:bg-blue-700 transition">
+        Create Appointment
+      </button>
+    </div>
+  </form>
+
+</main>
+
+
+
 </body>
 <script src="../script/Appointments.js" type="module"></script>
 </html>

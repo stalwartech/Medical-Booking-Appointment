@@ -31,6 +31,7 @@
   let Weight = document.getElementById("Weight")
   let Height = document.getElementById("Height")
   let BMI = document.getElementById("BMI")
+  let Userrole = document.getElementById("Userrole")
   let role = document.getElementById("role")
   let patientProfile = document.getElementById("patientProfile");
   let drProfile = document.getElementById("drProfile");
@@ -53,34 +54,38 @@ try {
     const userDoc = doc(userColRef, uid);
     const docSnap = await getDoc(userDoc)
     const userData = docSnap.data()
-    console.log(docSnap.data().role); // What is the role
+    console.log(userData.role); // What is the role
 
-    if (docSnap.data().role == "Patient") { 
+    if (userData.role == "Patient") { 
       drProfile.style.display = "none"
-      username.innerHTML = `<b>${userData.firstName}</b>`;
-      fName.innerHTML = `<b>${userData.firstName}</b>`
+      username.innerHTML = `<b>${userData.FirstName}</b>`;
+      fName.innerHTML = `<b>${userData.FirstName}</b>`
       age.textContent = (new Date().getFullYear())-(userData.DOB.slice(0,4));
       gene.textContent = userData.Genetic;
       NHISID.textContent = userData.NHISID;
-      gender.textContent = userData.gender;
-      bGroup.textContent = userData.bloodGroup;
+      gender.textContent = userData.Gender;
+      bGroup.textContent = userData.BloodGroup;
+      role.textContent = "Doctor";
       Weight.textContent = userData.Weight;
       Height.textContent = userData.Height;
-      role.textContent = userData.role;
+      Userrole.textContent = userData.role;
       BMI.textContent = (userData.Weight/(userData.Height *userData.Height)).toFixed(2)   
       return
     }
-    if (docSnap.data().role == "Doctor") { 
+    if (userData.role == "Doctor") { 
+      Doctors.style.display = "none"
       patientProfile.style.display = "none"
-      username.innerHTML = `<b>${userData.firstName}</b>`;
-      fName.innerHTML = `<b>${userData.firstName}</b>`;
-      age.textContent = (new Date().getFullYear())-(userData.DOB.slice(0,4));
-      gene.textContent = userData.Genetic;
-      NHISID.textContent = userData.NHISID;
+      username.innerHTML = `<b>${userData.fullName}</b>`;
+      fName.innerHTML = `<b>${userData.fullName.slice(0)}</b>`;
+      role.textContent = "Patients"
+      // age.textContent = (new Date().getFullYear())-(userData.DOB.slice(0,4));
+      gene.textContent = userData.Specialty;
+      NHISID.textContent = userData.LicenseID;
       gender.textContent = userData.gender;
       bGroup.textContent = userData.bloodGroup;
       Weight.textContent = userData.Weight;
       Height.textContent = userData.Height;
+      Userrole.textContent = userData.role;
       BMI.textContent = (userData.Weight/(userData.Height * userData.Height)).toFixed(2)   
       return
     }
@@ -116,8 +121,6 @@ finally{
     Settings.addEventListener("click", () => {
       window.location.href = "../src/Settings.html"
     })
-
-
 }
 
 
