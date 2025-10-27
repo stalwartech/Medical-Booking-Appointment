@@ -73,20 +73,20 @@ try {
       return
     }
     if (userData.role == "Doctor") { 
+      console.log(userData);
+      
       Doctors.style.display = "none"
       patientProfile.style.display = "none"
       username.innerHTML = `<b>${userData.fullName}</b>`;
       fName.innerHTML = `<b>${userData.fullName.slice(0)}</b>`;
       role.textContent = "Patients"
-      // age.textContent = (new Date().getFullYear())-(userData.DOB.slice(0,4));
-      gene.textContent = userData.Specialty;
-      NHISID.textContent = userData.LicenseID;
-      gender.textContent = userData.gender;
-      bGroup.textContent = userData.bloodGroup;
-      Weight.textContent = userData.Weight;
-      Height.textContent = userData.Height;
-      Userrole.textContent = userData.role;
-      BMI.textContent = (userData.Weight/(userData.Height * userData.Height)).toFixed(2)   
+      spec.textContent = userData.Specialty;
+      LicID.textContent = userData.LicenseID;
+      gend.textContent = userData.Gender;
+      xp.textContent = userData.Experience;
+      fee.textContent = userData.ConsultFee;
+      hosName.textContent = userData.HospitalName;
+      Address.textContent = userData.HospitalAddress;
       return
     }
 

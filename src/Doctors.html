@@ -12,7 +12,7 @@
 <header class="flex ml-60 py-5 gap-5 bg-[#F7F7F7] rounded-2xl mr-2 px-5">
     <input type="text" class="border-gray-500  border-1 h-8 w-[70vw] rounded-[10px] bg-white placeholder:pl-5" placeholder="🔍 Search your history over here" >
 <div class="relative inline-block">
-  <span class="material-symbols-outlined text-4xl text-gray-700">    notifications_unread</span>
+  <span class="material-symbols-outlined text-4xl text-gray-700">notifications_unread</span>
   <span class="absolute top-0 right-0 block h-2 w-2 rounded-full bg-red-600 ring-2 ring-white"></span>
 </div>
     <div class="flex gap-3">
@@ -59,99 +59,84 @@
 
 <main class="ml-60 -mt-145 bg-white h-[87vh] mr-2 px-5 pt-3 overflow-y-auto">
   <h2 class="text-2xl font-semibold text-gray-800 mb-6">Doctors</h2>
-
-  <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+<div class="flex">
+  <div id="drCard" class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
     <!-- Doctor Card -->
-    <div class="bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition p-4 text-center">
-      <img src="../Images/Logo-removebg-preview.png" alt="Doctor" class="w-24 h-24 mx-auto rounded-full object-cover mb-3">
-      <h3 class="text-lg font-semibold text-gray-800">Dr. Sarah Johnson</h3>
-      <p class="text-sm text-gray-500 mb-3">Cardiologist</p>
-      <button class="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition">
-        View Profile
-      </button>
+   <div class="bg-gray-50 w-60 rounded-xl shadow-md hover:shadow-lg transition py-10 text-center mx-4">
+      <div class="flex">
+        <img src="https://cdn.pixabay.com/photo/2024/09/03/15/21/ai-generated-9019520_640.png" alt="Doctor" class="w-24 h-27 mx-auto rounded-2xl object-cover mb-3">
+          <div class="flex flex-col gap-2 pr-2">
+              <h3 class="font-semibold text-gray-800 flex justify-center align-middle gap-2 mb-2 -pl-2 pr-2"> Dr. Jubril</h3>
+              <p class="text-sm text-gray-500 mb-2 flex justify-center align-middle gap-2 "> <span class="material-symbols-outlined">stethoscope</span>Dentist</p>
+              <p class="text-sm text-gray-500 mb-3 flex justify-center align-middle gap-2"> <span class="material-symbols-outlined">loyalty</span>#3000/ hr</p>
+          </div>
+      </div>
+      <div class="flex gap-2 justify-center">
+          <button class="bg-blue-600 w-full text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition"> Book </button>
+          <button class="bg-blue-200 w-full text-blue-500 text-sm px-4 py-2 rounded-lg hover:bg-blue-300 transition"> Details </button>
+      </div>
+    </div>
+   <div class="bg-gray-50 w-60 rounded-xl shadow-md hover:shadow-lg transition py-10 text-center mx-4">
+      <div class="flex">
+        <img src="https://cdn.pixabay.com/photo/2024/09/03/15/21/ai-generated-9019520_640.png" alt="Doctor" class="w-24 h-27 mx-auto rounded-2xl object-cover mb-3">
+          <div class="flex flex-col gap-2 pr-2">
+              <h3 class="font-semibold text-gray-800 flex justify-center align-middle gap-2 mb-2 -pl-2 pr-2"> Dr. Ismail</h3>
+              <p class="text-sm text-gray-500 mb-2 flex justify-center align-middle gap-2 "> <span class="material-symbols-outlined">stethoscope</span>Nuerologist</p>
+              <p class="text-sm text-gray-500 mb-3 flex justify-center align-middle gap-2"> <span class="material-symbols-outlined">loyalty</span>#7000/ hr</p>
+          </div>
+      </div>
+      <div class="flex gap-2 justify-center">
+          <button class="bg-blue-600 w-full text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition"> Book </button>
+          <button class="bg-blue-200 w-full text-blue-500 text-sm px-4 py-2 rounded-lg hover:bg-blue-300 transition"> Details </button>
+      </div>
+    </div>
+    
+   
+  </div>
+
+
+
+  <!-- Doctor Info -->
+  <!-- Modal Background -->
+<div id="doctorModal" class="fixed inset-0 bg-white bg-opacity-50 flex justify-center items-center z-50 hidden">
+  <!-- Modal Card -->
+  <div class="w-96 bg-white rounded-2xl shadow-xl overflow-hidden animate-fadeIn">
+    <!-- Image Section -->
+    <div class="relative">
+      <img 
+        src="https://cdn.pixabay.com/photo/2024/09/03/15/21/ai-generated-9019520_640.png" alt="Doctor Image" class="w-full h-52 object-cover"/>
+      <button id="close" class="absolute top-2 right-2 bg-red-500 text-white text-sm px-3 py-1 rounded-md hover:bg-red-600 transition"> Cancel </button>
     </div>
 
-    <div class="bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition p-4 text-center">
-      <img src="../Images/Logo-removebg-preview.png" alt="Doctor" class="w-24 h-24 mx-auto rounded-full object-cover mb-3">
-      <h3 class="text-lg font-semibold text-gray-800">Dr. Michael Lee</h3>
-      <p class="text-sm text-gray-500 mb-3">Neurologist</p>
-      <button class="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition">
-        View Profile
-      </button>
-    </div>
+    <!-- Doctor Info -->
+    <div class="p-5">
+      <h3 id="drName" class="text-lg font-semibold text-gray-800 mb-2">Dr. Akintaro Mubarak</h3>
+      
+      <div class="flex justify-between text-sm text-gray-600 mb-4">
+        <p id="drSpec">Specialist</p>
+        <p id="drFee">₦5,000 Consultation Fee</p>
+      </div>
 
-    <div class="bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition p-4 text-center">
-      <img src="../Images/Logo-removebg-preview.png" alt="Doctor" class="w-24 h-24 mx-auto rounded-full object-cover mb-3">
-      <h3 class="text-lg font-semibold text-gray-800">Dr. Aisha Bello</h3>
-      <p class="text-sm text-gray-500 mb-3">Dermatologist</p>
-      <button class="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition">
-        View Profile
-      </button>
-    </div>
+      <h4 class="text-md font-semibold text-gray-700 mb-1">Experience</h4>
+      <p id="drBio" class="text-sm text-gray-600 mb-4 leading-relaxed">
+        Bio: Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, nobis? 
+        Architecto, commodi, modi eum earum laborum omnis quasi impedit ad deleniti 
+        optio atque ea rem minima sit in, mollitia qui!
+      </p>
 
-    <div class="bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition p-4 text-center">
-      <img src="../Images/Logo-removebg-preview.png" alt="Doctor" class="w-24 h-24 mx-auto rounded-full object-cover mb-3">
-      <h3 class="text-lg font-semibold text-gray-800">Dr. David Kim</h3>
-      <p class="text-sm text-gray-500 mb-3">Orthopedic Surgeon</p>
-      <button class="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition">
-        View Profile
-      </button>
-    </div>
-
-    <div class="bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition p-4 text-center">
-      <img src="../Images/Logo-removebg-preview.png" alt="Doctor" class="w-24 h-24 mx-auto rounded-full object-cover mb-3">
-      <h3 class="text-lg font-semibold text-gray-800">Dr. Linda Okafor</h3>
-      <p class="text-sm text-gray-500 mb-3">Pediatrician</p>
-      <button class="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition">
-        View Profile
-      </button>
-    </div>
-
-    <div class="bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition p-4 text-center">
-      <img src="../Images/Logo-removebg-preview.png" alt="Doctor" class="w-24 h-24 mx-auto rounded-full object-cover mb-3">
-      <h3 class="text-lg font-semibold text-gray-800">Dr. James Adewale</h3>
-      <p class="text-sm text-gray-500 mb-3">Dentist</p>
-      <button class="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition">
-        View Profile
-      </button>
-    </div>
-
-    <div class="bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition p-4 text-center">
-      <img src="../Images/Logo-removebg-preview.png" alt="Doctor" class="w-24 h-24 mx-auto rounded-full object-cover mb-3">
-      <h3 class="text-lg font-semibold text-gray-800">Dr. Fatima Sule</h3>
-      <p class="text-sm text-gray-500 mb-3">Gynecologist</p>
-      <button class="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition">
-        View Profile
-      </button>
-    </div>
-
-    <div class="bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition p-4 text-center">
-      <img src="../Images/Logo-removebg-preview.png" alt="Doctor" class="w-24 h-24 mx-auto rounded-full object-cover mb-3">
-      <h3 class="text-lg font-semibold text-gray-800">Dr. Henry Nwosu</h3>
-      <p class="text-sm text-gray-500 mb-3">Psychiatrist</p>
-      <button class="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition">
-        View Profile
-      </button>
-    </div>
-
-    <div class="bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition p-4 text-center">
-      <img src="../Images/Logo-removebg-preview.png" alt="Doctor" class="w-24 h-24 mx-auto rounded-full object-cover mb-3">
-      <h3 class="text-lg font-semibold text-gray-800">Dr. Sophia Adams</h3>
-      <p class="text-sm text-gray-500 mb-3">Ophthalmologist</p>
-      <button class="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition">
-        View Profile
-      </button>
-    </div>
-
-    <div class="bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition p-4 text-center">
-      <img src="../Images/Logo-removebg-preview.png" alt="Doctor" class="w-24 h-24 mx-auto rounded-full object-cover mb-3">
-      <h3 class="text-lg font-semibold text-gray-800">Dr. Chinedu Eze</h3>
-      <p class="text-sm text-gray-500 mb-3">General Practitioner</p>
-      <button class="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition">
-        View Profile
-      </button>
+      <h4 class="text-md font-semibold text-gray-700 mb-1">Specialty</h4>
+      <ol class="list-decimal list-inside text-sm text-gray-600 space-y-1">
+        <li>Youtube</li>
+        <li>Facebook</li>
+        <li>English</li>
+      </ol>
     </div>
   </div>
+</div>
+
+
+
+</div>
 </main>
 
 </body>

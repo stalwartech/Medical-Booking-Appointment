@@ -57,7 +57,28 @@
     </div>
 </aside>
 
-<main class="ml-60 -mt-145 bg-white h-[87vh] mr-2 px-5 pt-3">
+<main class="ml-60 -mt-145 bg-white h-[87vh] mr-2 px-5 pt-3 overflow-y-auto">
+  <h2 class="text-2xl font-bold text-gray-700 mb-5">Appointment History</h2>
+
+  <div id="historyContainer" class="overflow-x-auto">
+    <table class="min-w-full bg-white border border-gray-200 rounded-xl shadow-sm">
+      <thead class="bg-blue-900 text-white">
+        <tr>
+          <th class="px-4 py-2 text-left">Patient</th>
+          <th class="px-4 py-2 text-left">Date</th>
+          <th class="px-4 py-2 text-left">Time From</th>
+          <th class="px-4 py-2 text-left">Time To</th>
+          <th class="px-4 py-2 text-left">Status</th>
+          <th class="px-4 py-2 text-left">Reason</th>
+        </tr>
+      </thead>
+      <tbody id="historyTable" class="divide-y divide-gray-200">
+        <!-- Filled dynamically -->
+      </tbody>
+    </table>
+  </div>
+</main>
+
     
 </main>
 </body>
