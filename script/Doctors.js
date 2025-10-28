@@ -32,13 +32,19 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebas
   const drFee = document.getElementById("drFee");
   const drBio = document.getElementById("drBio");
   const drDetails = document.getElementById("drDetails");
+  const HosName = document.getElementById("HosName");
+  const HosAdd = document.getElementById("HosAdd");
 
 
 //   Side Menu Button 
   const logOut = document.getElementById("signOut");
   const Overview = document.getElementById("Overview");
   const Appointments = document.getElementById("Appointments")
+    Appointments.style.display = "None"
+
   const Doctors = document.getElementById("Doctors")
+  Doctors.classList.add("bg-blue-900", "p-3", "rounded-2xl", "text-white")
+
   const History = document.getElementById("History")
   const Settings = document.getElementById("Settings")
 
@@ -60,6 +66,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebas
           
           if (user.role == "Doctor"){
             console.log(user);
+            // Appointments.style.display = "block"
+
             const name = user.fullName.split(" ");
            drCard.innerHTML += `
                       <div class="bg-gray-50 w-60 rounded-xl shadow-md hover:shadow-lg transition py-10 text-center mx-4">
@@ -84,7 +92,11 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebas
                       </div>`;                 
                     
                     
-                    }});
+                    }
+              if(user.role =="Patient"){
+                      Appointments.style.display = "none"
+              }                
+                  });
                                 // Handle Book button click
                   document.querySelectorAll(".bookDoctor").forEach((btn) => {
                     btn.addEventListener("click", (e) => {
@@ -165,6 +177,8 @@ async function getDetails(uid) {
       drSpec.textContent = doctor.Specialty || "No specialty";
       drFee.textContent = `₦${doctor.ConsultFee || "0"} Consultation Fee`;
       drBio.textContent = doctor.DoctorBio || "No bio available";
+      HosName.textContent = doctor.HospitalName
+      HosAdd.textContent = doctor.HospitalAddress
 
       openModal();
     } else {

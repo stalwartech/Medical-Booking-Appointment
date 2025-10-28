@@ -38,7 +38,7 @@
         <div class="flex flex-col gap-10 pl-10">
             <button id="Overview" class="flex items-center gap-2 font-bold  text-gray-500 hover:bg-blue-900 hover:p-3 hover:rounded-2xl hover:text-white active:bg-blue-900 active:p-3 active:rounded-2xl active:text-white"> <span class="material-symbols-outlined">overview</span> Overview</button>
             <button id="Appointments" class="flex items-center gap-2 font-bold text-gray-500 hover:bg-blue-900 hover:p-3 hover:rounded-2xl hover:text-white"><span class="material-symbols-outlined">calendar_month</span>Appointments</button>
-            <button id="Doctors" class="flex items-center gap-2 font-bold text-gray-500 hover:bg-blue-900 hover:p-3 hover:rounded-2xl hover:text-white"><span class="material-symbols-outlined">person</span> <span id="role">Doctors</span></button>
+            <button id="Doctors" class="flex items-center gap-2 font-bold text-gray-500 hover:bg-blue-900 hover:p-3 hover:rounded-2xl hover:text-white"><span class="material-symbols-outlined">person</span>Book a Doctor</button>
             <button id="History" class="flex items-center gap-2 font-bold text-gray-500 hover:bg-blue-900 hover:p-3 hover:rounded-2xl hover:text-white"><span class="material-symbols-outlined">history</span>Histtory</button>
             <button id="Settings" class="flex items-center gap-2 font-bold text-gray-500 hover:bg-blue-900 hover:p-3 hover:rounded-2xl hover:text-white"><span class="material-symbols-outlined">settings</span>Settings</button>
             <button class="flex items-center gap-2 font-bold text-gray-500 hover:bg-blue-900 hover:p-3 hover:rounded-2xl hover:text-white" id="signOut"><span class="material-symbols-outlined">logout</span>Logout</button>
@@ -62,21 +62,8 @@
 <div class="flex">
   <div id="drCard" class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
     <!-- Doctor Card -->
-   <div class="bg-gray-50 w-60 rounded-xl shadow-md hover:shadow-lg transition py-10 text-center mx-4">
-      <div class="flex">
-        <img src="https://cdn.pixabay.com/photo/2024/09/03/15/21/ai-generated-9019520_640.png" alt="Doctor" class="w-24 h-27 mx-auto rounded-2xl object-cover mb-3">
-          <div class="flex flex-col gap-2 pr-2">
-              <h3 class="font-semibold text-gray-800 flex justify-center align-middle gap-2 mb-2 -pl-2 pr-2"> Dr. Jubril</h3>
-              <p class="text-sm text-gray-500 mb-2 flex justify-center align-middle gap-2 "> <span class="material-symbols-outlined">stethoscope</span>Dentist</p>
-              <p class="text-sm text-gray-500 mb-3 flex justify-center align-middle gap-2"> <span class="material-symbols-outlined">loyalty</span>#3000/ hr</p>
-          </div>
-      </div>
-      <div class="flex gap-2 justify-center">
-          <button class="bg-blue-600 w-full text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition"> Book </button>
-          <button class="bg-blue-200 w-full text-blue-500 text-sm px-4 py-2 rounded-lg hover:bg-blue-300 transition"> Details </button>
-      </div>
-    </div>
-   <div class="bg-gray-50 w-60 rounded-xl shadow-md hover:shadow-lg transition py-10 text-center mx-4">
+
+   <!-- <div class="bg-gray-50 w-60 rounded-xl shadow-md hover:shadow-lg transition py-10 text-center mx-4">
       <div class="flex">
         <img src="https://cdn.pixabay.com/photo/2024/09/03/15/21/ai-generated-9019520_640.png" alt="Doctor" class="w-24 h-27 mx-auto rounded-2xl object-cover mb-3">
           <div class="flex flex-col gap-2 pr-2">
@@ -89,7 +76,7 @@
           <button class="bg-blue-600 w-full text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition"> Book </button>
           <button class="bg-blue-200 w-full text-blue-500 text-sm px-4 py-2 rounded-lg hover:bg-blue-300 transition"> Details </button>
       </div>
-    </div>
+    </div> -->
     
    
   </div>
@@ -124,12 +111,14 @@
         optio atque ea rem minima sit in, mollitia qui!
       </p>
 
-      <h4 class="text-md font-semibold text-gray-700 mb-1">Specialty</h4>
-      <ol class="list-decimal list-inside text-sm text-gray-600 space-y-1">
+      <h4 class="text-md font-semibold text-gray-700 mb-1">Hospital details</h4>
+      <h3>Hospital Name: <span id="HosName">Name</span></h3>
+      <h3>Hospital Address: <span id="HosAdd">Name</span></h3>
+      <!-- <ol class="list-decimal list-inside text-sm text-gray-600 space-y-1">
         <li>Youtube</li>
         <li>Facebook</li>
         <li>English</li>
-      </ol>
+      </ol> -->
     </div>
   </div>
 </div>

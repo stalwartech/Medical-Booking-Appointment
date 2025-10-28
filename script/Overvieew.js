@@ -32,13 +32,13 @@
   let Height = document.getElementById("Height")
   let BMI = document.getElementById("BMI")
   let Userrole = document.getElementById("Userrole")
-  let role = document.getElementById("role")
   let patientProfile = document.getElementById("patientProfile");
   let drProfile = document.getElementById("drProfile");
   
   // Getting all element for side menus
   const logOut = document.getElementById("signOut");
   const Overview = document.getElementById("Overview");
+  Overview.classList.add("bg-blue-900", "p-3", "rounded-2xl", "text-white")
   const Appointments = document.getElementById("Appointments")
   const Doctors = document.getElementById("Doctors")
   const History = document.getElementById("History")
@@ -58,6 +58,7 @@ try {
 
     if (userData.role == "Patient") { 
       drProfile.style.display = "none"
+      Appointments.style.display = "none"
       username.innerHTML = `<b>${userData.FirstName}</b>`;
       fName.innerHTML = `<b>${userData.FirstName}</b>`
       age.textContent = (new Date().getFullYear())-(userData.DOB.slice(0,4));
@@ -65,7 +66,6 @@ try {
       NHISID.textContent = userData.NHISID;
       gender.textContent = userData.Gender;
       bGroup.textContent = userData.BloodGroup;
-      role.textContent = "Doctor";
       Weight.textContent = userData.Weight;
       Height.textContent = userData.Height;
       Userrole.textContent = userData.role;
@@ -74,12 +74,10 @@ try {
     }
     if (userData.role == "Doctor") { 
       console.log(userData);
-      
       Doctors.style.display = "none"
       patientProfile.style.display = "none"
       username.innerHTML = `<b>${userData.fullName}</b>`;
       fName.innerHTML = `<b>${userData.fullName.slice(0)}</b>`;
-      role.textContent = "Patients"
       spec.textContent = userData.Specialty;
       LicID.textContent = userData.LicenseID;
       gend.textContent = userData.Gender;

@@ -52,6 +52,16 @@ let loginUser = async () => {
         window.location.href = "../src/Overview.html"    
     } catch (error) {
         console.log(error.code);
+        if (error.code === "auth/network-request-failed") {
+            notifyPara.innerHTML = "Unstable Internet Connection"
+            return
+        }
+        if (error.code === "auth/invalid-credential") {
+            notifyPara.innerHTML = "Incorrect Credentials"
+            return
+        }
+
+
         // auth/network-request-failed
     }
 }

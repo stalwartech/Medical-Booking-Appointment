@@ -33,7 +33,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebas
   const Doctors = document.getElementById("Doctors")
   const History = document.getElementById("History")
   const Settings = document.getElementById("Settings")
-
+  Settings.classList.add("bg-blue-900", "p-3", "rounded-2xl", "text-white")
+  
   try {
     onAuthStateChanged(auth, async (user) => {
     if(user){
@@ -52,6 +53,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebas
                 return
                 }
             if (userData.role == "Patient" ) {
+                  Appointments.style.display = "none"
                 Patient.style.display = "block";
                 role.textContent = "Doctor";
                 return

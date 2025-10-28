@@ -24,14 +24,16 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebas
   const Patient = document.getElementById("Patient")
   const role = document.getElementById("role")
   const fName = document.getElementById("fName")
+  const myrole = document.getElementById("myrole")
 
 //   Side Menu Button 
   // Getting all element for side menus
   const logOut = document.getElementById("signOut");
   const Overview = document.getElementById("Overview");
-  const Appointments = document.getElementById("Appointments")
+  const Appointments = document.getElementById("Appointments");
   const Doctors = document.getElementById("Doctors")
   const History = document.getElementById("History")
+  History.classList.add("bg-blue-900", "p-3", "rounded-2xl", "text-white")
   const Settings = document.getElementById("Settings")
 
   try {
@@ -50,13 +52,17 @@ onAuthStateChanged(auth, async (user) => {
 
   // Determine user type and query appointments
   if (userData.role === "Doctor") {
+      Doctors.style.display = "none"
     q = query(appointmentsRef, where("doctorId", "==", uid));
     role.textContent = "Doctor";
+    myrole.textContent = "Patient"
     fName.textContent = userData.fullName;
   } else if (userData.role === "Patient") {
     q = query(appointmentsRef, where("patientId", "==", uid));
+    Appointments.style.display = "none"
     role.textContent = "Patient";
     fName.textContent = userData.fullName;
+    myrole.textContent = "Doctor"
   } else {
     console.log("Unknown role:", userData.role);
     return;

@@ -63,6 +63,7 @@ if (selectedDoctorId) {
   const logOut = document.getElementById("signOut");
   const Overview = document.getElementById("Overview");
   const Appointments = document.getElementById("Appointments")
+  Appointments.classList.add("bg-blue-900", "p-3", "rounded-2xl", "text-white")
   const Doctors = document.getElementById("Doctors")
   const History = document.getElementById("History")
   const Settings = document.getElementById("Settings")
@@ -95,7 +96,7 @@ onAuthStateChanged(auth, async (user) => {
   // If patient, show appointment form
   if (userData.role === "Patient") {
     Patient.style.display = "block";
-
+    Appointments.style.display = "none"
     PatName.value = `${userData.FirstName} ${userData.LastName}`;
     PatMail.value = userData.Email;
     PatDOB.value = userData.DOB;
@@ -123,6 +124,7 @@ onAuthStateChanged(auth, async (user) => {
         timeFrom.value = "";
         timeTo.value = "";
         appointReason.value = "";
+        window.location.href = "../src/History.html"
       } catch (err) {
         console.error("Error creating appointment:", err);
       }
@@ -132,7 +134,7 @@ onAuthStateChanged(auth, async (user) => {
   // If doctor, show appointments table
   if (userData.role === "Doctor") {
     Doctor.style.display = "block";
-
+    Doctors.style.display = "none";
     const appointTable = Doctor.querySelector("tbody");
     appointTable.innerHTML = ""; // clear existing rows
 
